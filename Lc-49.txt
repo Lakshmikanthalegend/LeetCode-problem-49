@@ -1,0 +1,21 @@
+public class GroupAnagrams {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // Create a HashMap to store the grouped anagrams
+        Map<String, List<String>> anagramsMap = new HashMap<>();
+        
+        for (String s : strs) {
+            // Sort the characters in the string to create a key
+            char[] charArray = s.toCharArray();
+            Arrays.sort(charArray);
+            String key = new String(charArray);
+            
+            // If the key is already in the map, add the string to the list
+            // Otherwise, create a new list for this key
+            anagramsMap.putIfAbsent(key, new ArrayList<>());
+            anagramsMap.get(key).add(s);
+        }
+        
+        // Return the values of the map as a list of lists
+        return new ArrayList<>(anagramsMap.values());
+    }
+}
