@@ -1,1 +1,2 @@
 # LeetCode-problem-49
+To solve the anagram grouping problem, I utilized a hashmap (or dictionary) to categorize strings based on their sorted character sequences. By sorting each string to create a unique key, I can efficiently group all anagrams together. This approach leverages the property that anagrams share identical sorted representations, allowing me to store and retrieve them easily. The final result is a list of lists, where each sublist contains strings that are anagrams of each other.
